@@ -12,9 +12,12 @@
         <div>
             <h1 class="text-center text-dark">Revobank</h1>
             <div class="text-end align-top">
-                <a class="btn btn-success" href="">Connexion</a>
-                <a class="btn btn-success" href="">Inscription</a>
-                <a class="btn btn-danger" href="">Deconnexion</a>
+                <?php if(empty($_SESSION["user"])):?>
+                    <a class="btn btn-success" href="?userAction=login">Connexion</a>
+                    <a class="btn btn-success" href="?userAction=inscription">Inscription</a>
+                <?php else: ?>
+                <a class="btn btn-danger" href="?userAction=logout">Deconnexion</a>
+                <?php endif; ?>
             </div>
         </div>
         <div class="text-center">
@@ -24,7 +27,7 @@
         </div>
     </header>
     <main class="container-fluid h-100" style="background-color: silver;">
-
+        <?= $content ?? ''; ?>
     </main>
     <footer class="bg-warning p-3 text-center">
         &copy; IPSSI - 2024
