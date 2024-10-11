@@ -10,4 +10,16 @@ class AccountModel extends AbstractModel{
 
         return $res->fetch();
     }
+
+    public function withdrawOrDeposit(string $action, int $amount, int $accountId){
+        if($action == "withdraw"){
+            $amount = -$amount;
+        }
+
+        $query="UPDATE comptebancaire SET solde = solde + :amount WHERE compteId = :accountId";
+        $this->executeRequest($query, [
+            "amount" => $amount,
+            "accountId" => $accountId,
+        ]);
+    }
 }

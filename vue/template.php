@@ -24,7 +24,7 @@
         </div>
         <div class="text-center">
             <a class="btn btn-dark" href="?account=consult">Consulter mon solde</a>
-            <a class="btn btn-dark" href="">Retirer ou Déposer</a>
+            <a class="btn btn-dark" href="?account=withdrawOrDeposit">Retirer ou Déposer</a>
             <a class="btn btn-dark" href="">Faire un virement</a>
         </div>
     </header>
