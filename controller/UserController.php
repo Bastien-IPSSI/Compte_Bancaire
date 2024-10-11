@@ -10,8 +10,8 @@ class UserController extends AbstractController{
     }
 
     public function userAction(){
-        if(!empty($_GET["userAction"])){
-            switch ($_GET["userAction"]) {
+        if(!empty($_GET["user"])){
+            switch ($_GET["user"]) {
                 case 'login':
                     if(!empty($_POST["email"])){
                         $user = $this->modelUser->connexion([
