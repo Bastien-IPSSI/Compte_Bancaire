@@ -1,9 +1,9 @@
 <h2 class="text-center text-dark">Inscription</h2>
 
-<form action="" id="form" method="post" enctype="multipart/form-data">
+<form action="" id="inscriptionForm" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="firstName">Prenom</label>
-        <input type="text" name="firstName" class="form-control" required>
+        <input type="text" name="firstName" class="form-control">
     </div>
     <div class="form-group">
         <label for="lastName">Nom</label>
@@ -22,6 +22,10 @@
     <div class="form-group">
         <label for="pass">Mot de passe</label>
         <input type="password" name="pass" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="solde">Solde</label>
+        <input type="number" name="solde" class="form-control" required>
     </div>
     <div class="form-group">
         <label for="accountType">Type de compte</label>

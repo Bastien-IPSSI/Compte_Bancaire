@@ -17,22 +17,25 @@
                 <?php if(empty($_SESSION["user"])):?>
                     <a class="btn btn-success" href="?user=login">Connexion</a>
                     <a class="btn btn-success" href="?user=inscription">Inscription</a>
-                <?php else: ?>
+                    <?php else: ?>
                 <a class="btn btn-danger" href="?user=logout">Deconnexion</a>
                 <?php endif; ?>
             </div>
         </div>
-        <div class="text-center">
-            <a class="btn btn-dark" href="?account=consult">Consulter mon solde</a>
-            <a class="btn btn-dark" href="?account=withdrawOrDeposit">Retirer ou Déposer</a>
-            <a class="btn btn-dark" href="?account=transfer">Faire un virement</a>
-        </div>
-    </header>
-    <main class="container-fluid h-100 p-0" style="background-color: silver;">
-        <?= $content ?? ''; ?>
-    </main>
-    <footer class="bg-warning p-3 text-center">
-        &copy; IPSSI - 2024
-    </footer>
+        <?php if(!empty($_SESSION["user"])):?>
+            <div class="text-center">
+                <a class="btn btn-dark" href="?account=consult">Consulter mon solde</a>
+                <a class="btn btn-dark" href="?account=withdrawOrDeposit">Retirer ou Déposer</a>
+                <a class="btn btn-dark" href="?account=transfer">Faire un virement</a>
+            </div>
+            <?php endif ?>
+        </header>
+        <main class="container-fluid h-100 p-0" style="background-color: silver;">
+            <?= $content ?? ''; ?>
+        </main>
+        <footer class="bg-warning p-3 text-center">
+            &copy; IPSSI - 2024
+        </footer>
+        <script src="public/js/inscriptionValidation.js"></script>
 </body>
 </html>

@@ -24,5 +24,9 @@ if(isset($_GET["user"])){
 }elseif(isset($_GET["account"])) {
     $accountController->accountAction($_GET["account"]);
 }else{
-    include "vue/template.php";
+    if(isset($_SESSION["user"])){
+        header("Location: ./?account=consult");
+    }else{
+        header("Location: ./?user=login");
+    }
 }
