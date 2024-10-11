@@ -25,7 +25,7 @@
         <div class="text-center">
             <a class="btn btn-dark" href="?account=consult">Consulter mon solde</a>
             <a class="btn btn-dark" href="?account=withdrawOrDeposit">Retirer ou Déposer</a>
-            <a class="btn btn-dark" href="">Faire un virement</a>
+            <a class="btn btn-dark" href="?account=transfer">Faire un virement</a>
         </div>
     </header>
     <main class="container-fluid h-100 p-0" style="background-color: silver;">

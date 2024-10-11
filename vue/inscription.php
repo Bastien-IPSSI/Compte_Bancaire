@@ -28,7 +28,7 @@
         <select name="accountType" class="form-select" required>
             <option value="Courant">Courant</option>
             <option value="Epargne">Epargne</option>
-            <option value="Courant">Entreprise</option>
+            <option value="Entreprise">Entreprise</option>
         </select>
     </div>
     <input type="submit" class="btn btn-success mt-3" value="Créer mon compte">

@@ -29,6 +29,19 @@ class AccountController extends AbstractController{
                     }
                     $this->render("withdrawOrDeposit", ["formMessage" => $formMessage]);
                     exit;
+                case 'transfer':
+                    $accounts = $this->modelAccount->getOtherAccounts($client["clientId"]);
+                    if(isset($_POST["amount"])){
+                        if($accountInfo["solde"] < $_POST["amount"]){
+                            $formMessage = [false, "Solde insuffisant"];
+                        }else{
+                            $formMessage = [true, "Virement effectué"];
+                            $this->modelAccount->withdrawOrDeposit("withdraw", $_POST["amount"], $accountInfo["compteId"]);
+                            $this->modelAccount->withdrawOrDeposit("deposit", $_POST["amount"], $_POST["accounts"]);
+                        }
+                    }
+                    $this->render("transfer", ["accounts" => $accounts, "formMessage" => $formMessage]);
+                    exit;
                 default:
                     header("Location: ./");
                     break;
