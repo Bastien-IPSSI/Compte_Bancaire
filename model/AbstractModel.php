@@ -34,7 +34,7 @@ class AbstractModel{
         $query = "INSERT INTO comptebancaire VALUES (NULL, :accountNumber, :amount, :accountType, :openingDate, :clientId)";
         $this->executeRequest($query, [
             "accountNumber" => "FR" . strval(rand(10000000000000000, 99999999999999999)),
-            "amount" => 0,
+            "amount" => $data["amount"],
             "accountType" => $data["accountType"],
             "openingDate" => date('Y-m-d H:i:s'),
             "clientId" => $userId,

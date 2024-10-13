@@ -25,9 +25,10 @@ class AccountController extends AbstractController{
                         }else{
                             $formMessage = [true, "Transaction effectuée"];
                             $this->modelAccount->withdrawOrDeposit($_POST["action"], $_POST["amount"], $accountInfo["compteId"]);
+                            header("Location: ?account=withdrawOrDeposit");
                         }
                     }
-                    $this->render("withdrawOrDeposit", ["formMessage" => $formMessage]);
+                    $this->render("withdrawOrDeposit", ["formMessage" => $formMessage, "accountInfo" => $accountInfo]);
                     exit;
                 case 'transfer':
                     $accounts = $this->modelAccount->getOtherAccounts($client["clientId"]);
@@ -38,9 +39,10 @@ class AccountController extends AbstractController{
                             $formMessage = [true, "Virement effectué"];
                             $this->modelAccount->withdrawOrDeposit("withdraw", $_POST["amount"], $accountInfo["compteId"]);
                             $this->modelAccount->withdrawOrDeposit("deposit", $_POST["amount"], $_POST["accounts"]);
+                            header("Location: ?account=transfer");
                         }
                     }
-                    $this->render("transfer", ["accounts" => $accounts, "formMessage" => $formMessage]);
+                    $this->render("transfer", ["accounts" => $accounts, "formMessage" => $formMessage, "accountInfo" => $accountInfo]);
                     exit;
                 default:
                     header("Location: ./");

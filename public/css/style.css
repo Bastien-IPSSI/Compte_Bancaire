@@ -1,0 +1,35 @@
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar{
+    height: 90%; 
+    width : 2px; 
+    background-color: rgb(68, 65, 65);
+    border-radius: 50%;
+}
+
+.home-bg{
+    background-color: #DDDBCB;
+}
+
+.main-bg{
+    background-color: #e0ded1;
+}
+
+.card-bg{
+    background-color: #fff;
+}
+
+.btn-bg{
+    background-color: #1B9AAA;
+}
+
+.btn-log{
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    color: black;
+}

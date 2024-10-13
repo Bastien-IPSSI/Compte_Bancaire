@@ -25,7 +25,7 @@ class UserController extends AbstractController{
                             exit;
                         }
                     }
-                    $this->render("login");
+                    $this->pureRender("login");
                     break;
                 case 'logout':
                     session_destroy();
@@ -39,6 +39,7 @@ class UserController extends AbstractController{
                             "phone" => $_POST["phone"],
                             "email" => $_POST["email"],
                             "pass" => $_POST["pass"],
+                            "amount" => $_POST["solde"],
                             "accountType" => $_POST["accountType"],
                         ]);
 
@@ -51,7 +52,7 @@ class UserController extends AbstractController{
                         header("Location: ./");
                         exit;
                     }
-                    $this->render("inscription");
+                    $this->pureRender("inscription");
                     break;
                 default:
                     header("Location: ./");

@@ -10,6 +10,11 @@ abstract class AbstractController {
         include "vue/template.php";
     }
 
+    public function pureRender($vue, array $data = []){
+        extract($data);
+        include "vue/" . $vue . ".php";
+    }
+
     public function isConnected(){
         return isset($_SESSION["user"]);
     }

@@ -25,4 +25,14 @@ if (params.get('user') === 'inscription') {
             e.preventDefault();
             alert(errorMessage);
     }})
+}else if(params.get('account') === 'withdrawOrDeposit'){
+    document.querySelector('#selectWithdrawDeposit').addEventListener("change", function(e){
+        let value = e.currentTarget.value;
+        let card = document.querySelector("#buttonWithdrawDeposit")
+        if(value === "deposit"){
+            card.style.backgroundColor = 'green';
+        }else if(value === "withdraw"){
+            card.style.backgroundColor = 'blue';
+        }
+    })
 }
